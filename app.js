@@ -2,21 +2,23 @@
 const path = require('path');
 const express = require('express');
 const bodyParser = require('body-parser');
-const expressHbs = require('express-handlebars');
+// const expressHbs = require('express-handlebars');
 
 const app = express();
 
-//setting up pug templating engine and load pug
-app.engine(
-    'hbs',
-    expressHbs({
-        layoutsDir: 'views/layouts/',
-        defaultLayout: 'main-layout',
-        extname : 'hbs'
-    })
-);
+// //setting up pug templating engine and load pug
+// app.engine(
+//     'hbs',
+//     expressHbs({
+//         layoutsDir: 'views/layouts/',
+//         defaultLayout: 'main-layout',
+//         extname : 'hbs'
+//     })
+// );
+
+
 //registerd as handlebars
-app.set('view engine', 'hbs');
+app.set('view engine', 'ejs');
 app.set('views','views');
 
 const adminData = require('./routes/admin');
