@@ -1,4 +1,6 @@
 const path = require('path');
+const mongoose = require('mongoose');
+
 
 const express = require('express');
 const bodyParser = require('body-parser');
@@ -21,4 +23,14 @@ app.use(shopRoutes);
 
 app.use(errorController.get404);
 
-app.listen(3000);
+mongoose
+.connect('mongodb+srv://kirancg93:Random@123@shoppingapp-k6pkg.mongodb.net/test?retryWrites=true&w=majority'
+,{ useNewUrlParser: true })
+.then(result => {
+app.listen(3000)
+})
+.catch(err => {
+console.log(err);
+});
+
+
