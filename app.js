@@ -25,12 +25,12 @@ app.use(errorController.get404);
 
 mongoose
 .connect('mongodb+srv://kirancg93:Random@123@shoppingapp-k6pkg.mongodb.net/test?retryWrites=true&w=majority'
-,{ useNewUrlParser: true })
-.then(result => {
+    ,{ useNewUrlParser: true })
+    .then(result => {
 app.listen(3000)
-})
-.catch(err => {
-console.log(err);
-});
+    })
+    .catch(err => {
+    console.log(err);
+    });
 
 
