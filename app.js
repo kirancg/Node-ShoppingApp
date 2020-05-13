@@ -32,8 +32,7 @@ app.use(shopRoutes);
 
 app.use(errorController.get404);
 
-
-
+//connecting to the database
 mongoose
 .connect('mongodb+srv://kirancg93:Random@123@shoppingapp-k6pkg.mongodb.net/test?retryWrites=true&w=majority'
     , { useNewUrlParser: true })
@@ -54,5 +53,5 @@ mongoose
         app.listen(3000)
     })
     .catch(err => {
-    console.log(err);
+        console.log(err);
     });
